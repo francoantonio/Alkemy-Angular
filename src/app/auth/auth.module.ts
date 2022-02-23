@@ -6,6 +6,7 @@ import { LoginComponent } from './page/login/login.component';
 import { AuthService } from './service/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StorageService } from '../storage.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers:[AuthService]
+  providers:[
+    AuthService,
+    StorageService]
 })
 export class AuthModule { }

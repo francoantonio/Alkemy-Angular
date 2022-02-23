@@ -14,7 +14,6 @@ export class AuthService {
   ) { }
 
   login(body:Auth):Observable<ResponseAuth>{
-    console.log(body)
     return this.http.post<ResponseAuth>(this.url,body)
   }
 }

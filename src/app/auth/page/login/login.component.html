@@ -5,11 +5,11 @@
     <form  [formGroup]="form" class="col-6">
     
     <div class="form-floating mb-3">
-        <input formControlName="emai" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input formControlName="email" type="email" class="form-control" [ngClass]="{'is-invalid':isError('email')}" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Email</label>
       </div>
       <div class="form-floating">
-        <input  formControlName="password" type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password">
+        <input  formControlName="password" type="password" class="form-control " [ngClass]="{'is-invalid':isError('password')}" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
       <div class="form-check">
@@ -19,6 +19,9 @@
         </label>
       </div>
       <button  type="button" [disabled]="form.invalid" (click)="login()" class="btn btn-primary mt-4">Ingresar</button>
+      <div *ngIf='error' class="alert alert-danger mt-5" >
+        Upss, contraseña o email invalidos!!!
+      </div>
     </form>
 </div>
 
