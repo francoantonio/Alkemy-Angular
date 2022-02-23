@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     this.navigate('/')
   }
   saveToken(token:string){
-    this.store.setStore('key',token)
+    this.store.setStore('token',token)
   }
   navigate(url:string){
     this.router.navigateByUrl(url)
