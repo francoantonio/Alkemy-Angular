@@ -1,2 +1,4 @@
-<app-search></app-search>
-<p>home works!</p>
+<div class="container">
+    <app-search placeholder="Buscador de heroes" (nextValue)="bucador($event)" ></app-search>
+    <app-grid-heroes [heroes]="Heroes | async"></app-grid-heroes>
+</div>

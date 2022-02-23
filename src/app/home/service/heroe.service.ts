@@ -13,7 +13,7 @@ export class HeroeService {
 
   getHeroByName(name:string){
     const url = `${this.urlBase}search/${name}`
-    return this.http.get(url)
+    return this.http.get<any>(url)
   }
   getConnectionsHeroeById(id:number){
     const url = `${this.urlBase}${id}/connections`
